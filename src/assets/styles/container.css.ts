@@ -1,9 +1,9 @@
 import { recipe } from "@vanilla-extract/recipes";
-import { vars } from "./vars.css"
+import { vars } from "./vars.css";
 
 export const containerStyles = recipe({
   base: {
-    width: "100%"
+    width: "100%",
   },
   variants: {
     gap: {
@@ -39,8 +39,31 @@ export const containerStyles = recipe({
         padding: "1.5rem",
       },
       form: {
-        padding: "0.5rem 0"
-      }
+        padding: "0.5rem 0",
+      },
+      sidebar: {
+        paddingBottom: "1.2rem",
+      },
+      taskArea: {
+        padding: "0",
+        "@media": {
+          "(max-width: 1024px)": {
+
+          },
+          "(max-width: 768px)": {
+
+          },
+          "(max-width: 480px)": {
+            padding: "0 1.2rem",
+          },
+          "(max-width: 400px)": {
+            padding: "0 1.9rem",
+          },
+          "(max-width: 380px)": {
+            padding: "0 2.4rem",
+          },
+        }
+      },
     },
     display: {
       flex: {
@@ -78,33 +101,91 @@ export const containerStyles = recipe({
         alignItems: vars.container.alignItems.baseline,
       },
     },
+    justifyContent: {
+      center: {
+        justifyContent: "center",
+      },
+      end: {
+        justifyContent: "end",
+      },
+      spaceBetween: {
+        justifyContent: "space-between",
+      },
+      spaceEvenly: {
+        justifyContent: "space-evenly",
+      },
+    },
     borderRadius: {
       default: {
         borderRadius: vars.shape.default,
       },
     },
     warp: {
-        default: {
-            flexWrap: "wrap",
+      default: {
+        flexWrap: "wrap",
+      },
+    },
+    btnGroup: {
+      default: {
+        background: vars.colors.darkGreySidebar,
+        borderBottom: vars.border.presets.default,
+        borderLeft: vars.border.presets.default,
+        borderRight: vars.border.presets.default,
+        ":hover": {
+          boxShadow: "0 0 8px 0 #424351",
+          backgroundColor: vars.colors.secondaryHover,
         },
+        ":first-child": {
+          borderTop: vars.border.presets.default,
+          borderTopLeftRadius: vars.shape.round,
+          borderTopRightRadius: vars.shape.round,
+        },
+        ":last-child": {
+          borderBottomLeftRadius: vars.shape.round,
+          borderBottomRightRadius: vars.shape.round,
+        },
+      },
     },
     border: {
-        top: {
-            borderTop: vars.border.presets.default,
-        },
-        default: {
-            border: vars.border.presets.default,
-        }
+      top: {
+        borderTop: vars.border.presets.default,
+      },
+      default: {
+        border: vars.border.presets.default,
+      },
     },
 
     bkground: {
-        mine: {
-            background: vars.colors.darkGreySidebar,
+      mine: {
+        background: vars.colors.darkGreySidebar,
+      },
+      second: {
+        background: vars.colors.secondary,
+      },
+    },
+    backgroundHover: {
+      second: {
+        ":hover": {
+          background: vars.colors.secondaryHover,
+          boxShadow: "0 0 8px 0 #424351",
+          border: "none",
+          cursor: "pointer",
         },
-        second: {
-            background: vars.colors.secondary,
-        }
-    }
+      },
+      primary: {
+        ":hover": {
+          background: vars.colors.primaryHover,
+          boxShadow: "0 0 8px 0 #f9617b",
+          border: "none",
+          cursor: "pointer",
+        },
+      },
+    },
+    height: {
+      default: {
+        height: "100vh",
+      },
+    },
   },
 });
 
@@ -112,11 +193,9 @@ export const footerBox = recipe({
   base: {
     flexDirection: vars.container.direction.row,
     "@media": {
-        "screen and (max-widht: 768px)": {
-            flexDirection: vars.container.direction.column,
-        },
-
-
+      "screen and (max-widht: 768px)": {
+        flexDirection: vars.container.direction.column,
+      },
     },
   },
   variants: {
@@ -279,9 +358,9 @@ export const footerBoxItems = recipe({
       },
     },
     borderRight: {
-        default: {
-            borderRight: vars.border.presets.default,
-        }
+      default: {
+        borderRight: vars.border.presets.default,
+      },
     },
   },
 });

@@ -1,4 +1,5 @@
 import { createGlobalTheme } from "@vanilla-extract/css";
+import { fonts } from "./fonts.css";
 
 export const vars = createGlobalTheme("#root", {
   controls: {
@@ -51,7 +52,7 @@ export const vars = createGlobalTheme("#root", {
     dangerHover: "hsl(10 82% 53.5%)",
   },
   fonts: {
-    main: "IBM Plex Sans",
+    main: fonts.ibmPlexSans.fontFamily,
     mono: "IBM Plex Mono",
   },
   fontSize: {

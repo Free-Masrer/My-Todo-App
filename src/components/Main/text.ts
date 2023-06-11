@@ -1,0 +1,1 @@
+export const todoAppName = "My Todo app";

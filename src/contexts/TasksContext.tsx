@@ -8,7 +8,6 @@ export interface TaskProps {
   category: CategoryProps;
   checked: boolean;
   content: string;
-  date: string;
   id: string;
 }
 
@@ -17,8 +16,6 @@ interface TasksContextProps {
   addTask: (newTask: TaskProps) => void;
   removeTask: (id: string) => void;
   updateCheckedStatus: (updatedTask: TaskProps, checked: boolean) => void;
-  updateDate: (updatedTask: TaskProps, date: string) => void;
-  updateTaskColor: (slugBeingUpdated: string, color: string) => void;
   changeTasksOrder: (result: TaskProps[]) => void;
 }
 
@@ -27,7 +24,7 @@ interface Props {
 }
 
 function TasksProvider({ children }: Props) {
-  const initialTasks = JSON.parse(localStorage.getItem("userTasksDonaClone") || "[]");
+  const initialTasks = JSON.parse(localStorage.getItem("userTasksDenys") || "[]");
 
   const [tasks, setTasks] = useState<TaskProps[]>(initialTasks);
 
@@ -50,27 +47,7 @@ function TasksProvider({ children }: Props) {
     );
   };
 
-  const updateDate = (updatedTask: TaskProps, date: string) => {
-    setTasks((prevTasks) =>
-      prevTasks.map((task) => {
-        if (task.id === updatedTask.id) {
-          return { ...updatedTask, date: date };
-        }
-        return task;
-      }),
-    );
-  };
 
-  const updateTaskColor = (slugBeingUpdated: string, color: string) => {
-    setTasks((prevTasks) =>
-      prevTasks.map((task) => {
-        if (task.category.slug === slugBeingUpdated) {
-          return { ...task, category: { ...task.category, color: color } };
-        }
-        return task;
-      }),
-    );
-  };
 
   const changeTasksOrder = (result: TaskProps[]) => {
     var index = 0;
@@ -87,12 +64,12 @@ function TasksProvider({ children }: Props) {
   };
 
   const updateTasks = useEffect(() => {
-    localStorage.setItem("userTasksDonaClone", JSON.stringify(tasks));
+    localStorage.setItem("userTasksDenys", JSON.stringify(tasks));
   }, [tasks]);
 
   return (
     <TasksContext.Provider
-      value={{ tasks, addTask, removeTask, updateCheckedStatus, updateDate, updateTaskColor, changeTasksOrder }}
+      value={{ tasks, addTask, removeTask, updateCheckedStatus, changeTasksOrder }}
     >
       {children}
     </TasksContext.Provider>

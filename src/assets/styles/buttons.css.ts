@@ -6,6 +6,7 @@ export const buttonStyles = recipe({
     color: vars.controls.colors.text.primary,
     textDecoration: "none",
     border: vars.button.shape.Border,
+    borderRadius: vars.shape.default,
     padding: ".7em 1em",
     boxShadow: "0 2px 4px #0000000d",
     outline: "none",
@@ -46,6 +47,52 @@ export const buttonStyles = recipe({
           boxShadow: "0 0 8px 0 hsl(10 82% 43.5%);",
           backgroundColor: vars.colors.dangerHover,
         },
+      },
+    },
+    margin: {
+      default: {
+        margin: "0 12px",
+      },
+      sidebarButton: {
+        margin: "12px 0",
+      },
+      none: {
+        margin: "0 5px",
+      },
+    },
+    padding: {
+      none: {
+        padding: "0",
+      },
+      small:{
+        padding: "5px"
+      },
+      default: {
+        padding: ".7em 1em",
+      },
+    },
+    vars: {
+      show: {
+        opacity: "1",
+      },
+      hide: {
+        opacity: "0",
+      },
+    },
+    transition: {
+      default: {
+        transition: "0.25s ease",
+        transitionProperty: "opacity",
+      },
+    },
+    display: {
+      default: {
+        display: "flex",
+      },
+    },
+    justifyItems: {
+      center: {
+        justifyItems: "center",
       },
     },
   },
@@ -118,18 +165,18 @@ export const checkboxStyle = recipe({
       },
     },
     opacityTransform: {
-        y: {
-          ":before": {
-            opacity: "1",
-            transform: "rotate(-45deg) scale(1)",
-          },
-        },
-        n: {
-          ":before": {
-            opacity: "0",
-            transform: "rotate(-45deg) scale(0)",
-          },
+      y: {
+        ":before": {
+          opacity: "1",
+          transform: "rotate(-45deg) scale(1)",
         },
       },
+      n: {
+        ":before": {
+          opacity: "0",
+          transform: "rotate(-45deg) scale(0)",
+        },
+      },
+    },
   },
 });
