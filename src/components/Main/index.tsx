@@ -17,7 +17,7 @@ import { IoIosArrowDropdown } from 'react-icons/io';
 import { v4 as uuid } from "uuid";
 
 import Task from "../Task";
-import Select from "../Select/index";
+import Select from "../Select/";
 
 import useShortcut from "../../hooks/useShortcut";
 
