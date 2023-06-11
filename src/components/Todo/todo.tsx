@@ -44,7 +44,7 @@ import { todoAppName } from "./text";
 
 
 
-function Main() {
+function Todo() {
   const { categories } = useContext(CategoriesContext);
   const { path } = useContext(PathContext);
   const { tasks, addTask, changeTasksOrder } = useContext(TasksContext);
@@ -297,4 +297,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Todo;

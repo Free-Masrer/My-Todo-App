@@ -11,7 +11,7 @@ import { CategoriesContext } from "@contexts/CategoriesContext";
 
 import { RbStyle, completeSpan, progressBar, progressIndicator, separator } from "./catbox.css";
 import { containerStyles } from "@assets/styles/container.css";
-import { formInput, newTodoForm } from "../Main/main.css";
+import { formInput, newTodoForm } from "../Todo/main.css";
 import { buttonStyles } from "@assets/styles/buttons.css";
 import { typographyStyle } from "@assets/styles/headding.css";
 

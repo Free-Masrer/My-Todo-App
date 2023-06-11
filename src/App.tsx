@@ -1,5 +1,5 @@
 import Sidebar from "./components/Sidebar/sidebar";
-import Main from "./components/Main/main";
+import Todo from "./components/Todo/todo";
 import MobileSidebar from "./components/Sidebar/mobilesidebar";
 import { containerStyles } from "./assets/styles/container.css";
 import { useState, useEffect } from "react";
@@ -30,7 +30,7 @@ function App() {
         gap: "small",
         height: "default"
       })}>
-        <Main />
+        <Todo />
         {isMobile ? <MobileSidebar /> : null}
         <Sidebar />
       </div>
