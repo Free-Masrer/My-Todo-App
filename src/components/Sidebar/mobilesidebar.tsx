@@ -9,16 +9,16 @@ import Category from "../Category";
 import useShortcut from "../../hooks/useShortcut";
 
 
-import { PathContext } from "../../contexts/PathContext";
-import { CategoriesContext } from "../../contexts/CategoriesContext";
+import { PathContext } from "@contexts/PathContext";
+import { CategoriesContext } from "@contexts/CategoriesContext";
 
 import { completeSpan, progressBar, progressIndicator, separator } from "./catbox.css";
-import { containerStyles } from "../../assets/styles/container.css";
+import { containerStyles } from "@assets/styles/container.css";
 import { formInput, newTodoForm } from "../Main/main.css";
-import { buttonStyles } from "../../assets/styles/buttons.css";
-import { typographyStyle } from "../../assets/styles/headding.css";
+import { buttonStyles } from "@assets/styles/buttons.css";
+import { typographyStyle } from "@assets/styles/headding.css";
 
-import { TasksContext } from "../../contexts/TasksContext";
+import { TasksContext } from "@contexts/TasksContext";
 
 
 

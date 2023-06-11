@@ -1,18 +1,18 @@
 import React, { useContext, useState } from "react";
 import { BsTrash } from 'react-icons/bs';
 
-import { CategoriesContext, CategoryProps } from "../../contexts/CategoriesContext";
-import { PathContext } from "../../contexts/PathContext";
-import { TasksContext } from "../../contexts/TasksContext";
+import { CategoriesContext, CategoryProps } from "@contexts/CategoriesContext";
+import { PathContext } from "@contexts/PathContext";
+import { TasksContext } from "@contexts/TasksContext";
 
 
 interface CategoryComponentProps {
   category: CategoryProps;
 }
 
-import { containerStyles } from "../../assets/styles/container.css";
-import { typographyStyle } from "../../assets/styles/headding.css";
-import { buttonStyles } from "../../assets/styles/buttons.css";
+import { containerStyles } from "@assets/styles/container.css";
+import { typographyStyle } from "@assets/styles/headding.css";
+import { buttonStyles } from "@assets/styles/buttons.css";
 import { taskAmountStyle } from "./category.css";
 
 

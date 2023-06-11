@@ -3,7 +3,7 @@ import React, { useContext, useRef } from "react";
 import { listItem, listItemUl, select } from "./select.css";
 import useOnClickOutside from "../../hooks/useOnClickOutside"
 
-import { CategoriesContext, CategoryProps } from "../../contexts/CategoriesContext";
+import { CategoriesContext, CategoryProps } from "@contexts/CategoriesContext";
 
 interface SelectProps {
   isSelectingCategory: boolean;
@@ -12,7 +12,7 @@ interface SelectProps {
   setCategory: React.Dispatch<React.SetStateAction<CategoryProps>>;
 }
 
-import { typographyStyle } from "../../assets/styles/headding.css";
+import { typographyStyle } from "@assets/styles/headding.css";
 
 function Select({ isSelectingCategory, setIsSelectingCategory, category, setCategory }: SelectProps) {
   const { categories } = useContext(CategoriesContext);

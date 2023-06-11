@@ -1,6 +1,6 @@
 import { style, globalStyle } from "@vanilla-extract/css";
-import { vars } from "./assets/styles/vars.css";
-import { fonts } from "./assets/styles/fonts.css";
+import { vars } from "@assets/styles/vars.css";
+import { fonts } from "@assets/styles/fonts.css";
 
 
 globalStyle("#root", {

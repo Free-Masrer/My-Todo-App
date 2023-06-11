@@ -21,9 +21,9 @@ import Select from "../Select";
 
 import useShortcut from "../../hooks/useShortcut";
 
-import { CategoriesContext, CategoryProps } from "../../contexts/CategoriesContext";
-import { PathContext } from "../../contexts/PathContext";
-import { TasksContext, TaskProps } from "../../contexts/TasksContext";
+import { CategoriesContext, CategoryProps } from "@contexts/CategoriesContext";
+import { PathContext } from "@contexts/PathContext";
+import { TasksContext, TaskProps } from "@contexts/TasksContext";
 
 
 import {
@@ -37,9 +37,9 @@ import {
   iconStyle,
 } from "./main.css";
 
-import { selectBox } from "../../assets/styles/box.css";
-import { typographyStyle } from "../../assets/styles/headding.css";
-import { containerStyles } from "../../assets/styles/container.css";
+import { selectBox } from "@assets/styles/box.css";
+import { typographyStyle } from "@assets/styles/headding.css";
+import { containerStyles } from "@assets/styles/container.css";
 import { todoAppName } from "./text";
 
 

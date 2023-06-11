@@ -1,5 +1,5 @@
 import { style, globalStyle } from "@vanilla-extract/css";
-import { vars } from "../../assets/styles/vars.css";
+import { vars } from "@assets/styles/vars.css";
 import { recipe } from "@vanilla-extract/recipes";
 
 export const MainStyle = style({

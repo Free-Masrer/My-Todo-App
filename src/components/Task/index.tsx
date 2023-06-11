@@ -1,14 +1,14 @@
 import { useContext, useState } from "react";
 
-import { TasksContext, TaskProps } from "../../contexts/TasksContext";
+import { TasksContext, TaskProps } from "@contexts/TasksContext";
 
 interface TaskComponentProps {
   task: TaskProps;
 }
 
-import { containerStyles } from "../../assets/styles/container.css";
-import { typographyStyle } from "../../assets/styles/headding.css";
-import { buttonStyles } from "../../assets/styles/buttons.css";
+import { containerStyles } from "@assets/styles/container.css";
+import { typographyStyle } from "@assets/styles/headding.css";
+import { buttonStyles } from "@assets/styles/buttons.css";
 
 import {
   Left,

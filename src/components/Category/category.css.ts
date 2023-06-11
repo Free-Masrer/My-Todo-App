@@ -1,4 +1,4 @@
-import { vars } from '../../assets/styles/vars.css';
+import { vars } from '@assets/styles/vars.css';
 import { style } from '@vanilla-extract/css';
 
 
