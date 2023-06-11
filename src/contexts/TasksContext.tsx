@@ -17,6 +17,7 @@ interface TasksContextProps {
   removeTask: (id: string) => void;
   updateCheckedStatus: (updatedTask: TaskProps, checked: boolean) => void;
   changeTasksOrder: (result: TaskProps[]) => void;
+  updateTasks: () => void;
 }
 
 interface Props {
@@ -47,8 +48,6 @@ function TasksProvider({ children }: Props) {
     );
   };
 
-
-
   const changeTasksOrder = (result: TaskProps[]) => {
     var index = 0;
 
@@ -63,13 +62,17 @@ function TasksProvider({ children }: Props) {
     );
   };
 
-  const updateTasks = useEffect(() => {
+  const updateTasks = () => {
     localStorage.setItem("userTasksDenys", JSON.stringify(tasks));
+  };
+
+  useEffect(() => {
+    updateTasks();
   }, [tasks]);
 
   return (
     <TasksContext.Provider
-      value={{ tasks, addTask, removeTask, updateCheckedStatus, changeTasksOrder }}
+      value={{ tasks, addTask, removeTask, updateCheckedStatus, changeTasksOrder, updateTasks }}
     >
       {children}
     </TasksContext.Provider>
