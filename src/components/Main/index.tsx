@@ -3,7 +3,6 @@ import React, {
   useContext,
   useState,
   useEffect,
-  useMemo
 } from "react";
 
 import {
@@ -50,14 +49,14 @@ function Main() {
   const { path } = useContext(PathContext);
   const { tasks, addTask, changeTasksOrder } = useContext(TasksContext);
 
-  const [checked, setChecked] = useState(false);
+  const [checked] = useState(false);
   const [category, setCategory] = useState<CategoryProps>(categories[0]);
   const [isSelectingCategory, setIsSelectingCategory] = useState(false);
 
   const formRef = useRef<HTMLFormElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const checkedTasks = useMemo(() => tasks.filter((task) => task.checked), [tasks]);
+  
   const [checkedTasksInCategory, setCheckedTasksInCategory] = useState<TaskProps[]>([]);
 
   const [isMobile] = useState(window.innerWidth <= 390);
@@ -133,6 +132,8 @@ function Main() {
 
     changeTasksOrder(items);
   }
+
+  const completionPercentage = filteredTasks.length > 0 ? Math.floor((checkedTasksInCategory.length / filteredTasks.length) * 100) : 0;
 
   return (
     <div className={MainStyle}
@@ -247,7 +248,7 @@ function Main() {
               colorVars: "secondary"
             })}>Completed:</span>
             <span className={typographyStyle({ colorVars: "red" })}>
-              {Math.floor((checkedTasksInCategory.length / filteredTasks.length) * 100)}%
+              {completionPercentage}%
             </span>
 
           </div>

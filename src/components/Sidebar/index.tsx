@@ -29,6 +29,10 @@ function Sidebar() {
 
   const checkedTasks = useMemo(() => tasks.filter((task) => task.checked), [tasks]);
 
+  const totalTasks = tasks.length;
+  const completedTasks = checkedTasks.length;
+  const completionPercentage = totalTasks > 0 ? Math.floor((completedTasks / totalTasks) * 100) : 0;
+
   function handleAddCategory(e: React.FormEvent) {
     e.preventDefault();
 
@@ -214,7 +218,7 @@ function Sidebar() {
           <span className={typographyStyle({
             role: "lable",
             colorVars: "red"
-          })}>{Math.floor((checkedTasks.length / tasks.length) * 100)}%</span><span className={typographyStyle({
+          })}>{completionPercentage}%</span><span className={typographyStyle({
             colorVars: "secondary",
           })}>of 100%</span>
         </div>
@@ -223,7 +227,7 @@ function Sidebar() {
             <div 
               className={progressIndicator}
               style={{
-                width: `${(checkedTasks.length / tasks.length) * 100}%`,
+                width: `${completionPercentage}%`,
               }}></div>
           </div>
         </div>
