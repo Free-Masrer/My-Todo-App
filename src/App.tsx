@@ -2,7 +2,7 @@ import Sidebar from "./components/Sidebar";
 import Main from "./components/Main";
 import MobileSidebar from "./components/Sidebar/mobilesidebar";
 import { containerStyles } from "./assets/styles/container.css";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import "./app.css";
 

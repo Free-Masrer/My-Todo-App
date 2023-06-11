@@ -22,11 +22,10 @@ function Category({ category }: CategoryComponentProps) {
   const { tasks, removeTask } = useContext(TasksContext);
 
   const [beingRemoved, setBeingRemoved] = useState("");
-  const [slugBeingUpdated, setSlugBeingUpdated] = useState("");
-  const [clickPosition, setClickPosition] = useState({ top: 0, left: 0 });
+
 
   const [isHovered, setIsHovered] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
+  const [isMobile] = useState(window.innerWidth <= 1024);
 
   function handleRemoveCategory(slug: string, e: React.MouseEvent) {
     e.stopPropagation();

@@ -1,4 +1,4 @@
-import { style } from "@vanilla-extract/css";
+
 import { vars } from "../../assets/styles/vars.css";
 import { recipe } from "@vanilla-extract/recipes";
 

@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect, useContext } from "react";
+import React, { createContext, useState } from "react";
 
 export const CategoriesContext = createContext({} as CategoriesContextProps);
 
@@ -46,9 +46,6 @@ function CategoriesProvider({ children }: Props) {
     setCategories(result);
   };
 
-  const updateCategories = useEffect(() => {
-    localStorage.setItem("userCategoriesDenys", JSON.stringify(categories));
-  }, [categories]);
 
   return (
     <CategoriesContext.Provider
