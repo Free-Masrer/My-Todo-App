@@ -66,6 +66,7 @@ function Task({ task }: TaskComponentProps) {
           role: "lable",
           colorVars: checked ? "disabled" : "primary"
         })}>{task.content}</span>
+         {beingRemoved && <p>Task delete</p>}
       </div>
 
       <div className={Right}>
@@ -74,7 +75,6 @@ function Task({ task }: TaskComponentProps) {
             buttons: "primary",
           })}
           onClick={() => handleRemoveTask(task.id)}>
-            {beingRemoved && <p>Категория {beingRemoved} удалена.</p>}
           <span>Delete </span>
         </button>
       </div>

@@ -1,5 +1,5 @@
-import Sidebar from "./components/Sidebar";
-import Main from "./components/Main";
+import Sidebar from "./components/Sidebar/sidebar";
+import Main from "./components/Main/main";
 import MobileSidebar from "./components/Sidebar/mobilesidebar";
 import { containerStyles } from "./assets/styles/container.css";
 import { useState, useEffect } from "react";

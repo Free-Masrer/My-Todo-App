@@ -2,7 +2,7 @@ import React, { useContext, useRef, useMemo } from "react";
 
 import { Droppable, Draggable, DragDropContext, DropResult } from "react-beautiful-dnd";
 
-import Category from "../Category";
+import Category from "../Category/category";
 
 import useShortcut from "../../hooks/useShortcut";
 
