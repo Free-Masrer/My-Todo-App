@@ -74,6 +74,7 @@ function Task({ task }: TaskComponentProps) {
             buttons: "primary",
           })}
           onClick={() => handleRemoveTask(task.id)}>
+            {beingRemoved && <p>Категория {beingRemoved} удалена.</p>}
           <span>Delete </span>
         </button>
       </div>

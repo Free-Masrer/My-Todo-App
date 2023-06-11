@@ -43,7 +43,8 @@ function Category({ category }: CategoryComponentProps) {
     setTimeout(() => {
       removeCategory(slug);
       removeTasks(slug);
-    }, 250);
+      setBeingRemoved("");
+    }, 2000);
   };
 
   const removeTasks = (slug: string) => {
@@ -52,6 +53,7 @@ function Category({ category }: CategoryComponentProps) {
 
 
   const taskAmount = tasks.filter((task) => task.category.slug === category.slug).length;
+
 
   return (
     <div
@@ -77,20 +79,24 @@ function Category({ category }: CategoryComponentProps) {
         <span className={typographyStyle({
           role: "lable",
         })}>{category.title}</span>
+        {beingRemoved &&
+          <span>
+            Сategory deleted
+          </span>}
       </div>
       {category.slug !== "/" && (
-          <button className={buttonStyles({
-            display: "default",
-            justifyItems: "center",
-            buttons: "primary",
-            margin: isMobile? "none" : "default",
-            padding: isMobile? "small" : "default",
-            vars: isHovered? "show" : "hide",
-            transition: "default",
-          })} onClick={(e) => handleRemoveCategory(category.slug, e)}>
-            <BsTrash />
-          </button>
-        )}
+        <button className={buttonStyles({
+          display: "default",
+          justifyItems: "center",
+          buttons: "primary",
+          margin: isMobile ? "none" : "default",
+          padding: isMobile ? "small" : "default",
+          vars: isHovered ? "show" : "hide",
+          transition: "default",
+        })} onClick={(e) => handleRemoveCategory(category.slug, e)}>
+          <BsTrash />
+        </button>
+      )}
       <span className={taskAmountStyle}>
         <span
           className={typographyStyle({
