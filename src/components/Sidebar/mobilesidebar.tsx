@@ -6,7 +6,7 @@ import { Droppable, Draggable, DragDropContext, DropResult } from "react-beautif
 
 import Category from "../Category/category";
 
-import useShortcut from "../../hooks/useShortcut";
+import useShortcut from "@hooks/useShortcut";
 
 
 import { PathContext } from "@contexts/PathContext";

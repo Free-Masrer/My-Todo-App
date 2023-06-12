@@ -19,7 +19,7 @@ import { v4 as uuid } from "uuid";
 import Task from "../Task/task";
 import Select from "../Select/select";
 
-import useShortcut from "../../hooks/useShortcut";
+import useShortcut from "@hooks/useShortcut";
 
 import { CategoriesContext, CategoryProps } from "@contexts/CategoriesContext";
 import { PathContext } from "@contexts/PathContext";
