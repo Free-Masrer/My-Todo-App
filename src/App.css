@@ -27,6 +27,8 @@
 html, body, #root {
   height: 100%;
   overflow-x: hidden;
+  background: #5b5b66;
+  padding: 0.2rem;
 }
 
 .show-main.main-padded {
