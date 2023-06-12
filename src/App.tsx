@@ -4,7 +4,8 @@ import MobileSidebar from "./components/Sidebar/mobilesidebar";
 import { containerStyles } from "./assets/styles/container.css";
 import { useState, useEffect } from "react";
 
-import "./app.css";
+import "./App.css";
+import "./Style.css"
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
