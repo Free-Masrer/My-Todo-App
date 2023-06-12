@@ -14,7 +14,6 @@ import { Alert, containerStyles } from "@assets/styles/container.css";
 import { typographyStyle } from "@assets/styles/headding.css";
 import { buttonStyles } from "@assets/styles/buttons.css";
 import { taskAmountStyle } from "./category.css";
-import { AlertLabel } from "../Task/task.css";
 
 
 function Category({ category }: CategoryComponentProps) {
