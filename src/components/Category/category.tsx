@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { BsTrash } from 'react-icons/bs';
-import { CiWarning } from 'react-icons/ci'
 
 import { CategoriesContext, CategoryProps } from "@contexts/CategoriesContext";
 import { PathContext } from "@contexts/PathContext";
@@ -85,8 +84,8 @@ function Category({ category }: CategoryComponentProps) {
           <div className={Alert({
             style: "error",
           })}>
-            <CiWarning />
-            <span className={AlertLabel}>
+
+            <span>
               deleted
             </span>
           </div>}

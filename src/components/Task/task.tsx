@@ -11,8 +11,6 @@ import { typographyStyle } from "@assets/styles/headding.css";
 import { buttonStyles } from "@assets/styles/buttons.css";
 
 import {
-  AlertIcons,
-  AlertLabel,
   Left,
   LeftLabel,
   Right,
@@ -20,7 +18,6 @@ import {
   checkboxInput
 } from "./task.css";
 
-import { GrCircleAlert } from "react-icons/gr"
 
 function Task({ task }: TaskComponentProps) {
   const { removeTask, updateCheckedStatus } = useContext(TasksContext);
@@ -74,8 +71,8 @@ function Task({ task }: TaskComponentProps) {
           <div className={Alert({
             style: "error"
           })}>
-            <GrCircleAlert className={AlertIcons} />
-            <span className={AlertLabel}>Task delete</span>
+
+            <span>Task delete</span>
           </div>}
       </div>
 
