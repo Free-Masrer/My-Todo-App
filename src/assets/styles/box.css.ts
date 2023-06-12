@@ -1,5 +1,5 @@
 
-import { vars } from "../../assets/styles/vars.css";
+import { vars } from "@assets/styles/vars.css";
 import { recipe } from "@vanilla-extract/recipes";
 
 export const selectBox = recipe({
@@ -7,10 +7,12 @@ export const selectBox = recipe({
     borderRadius: vars.shape.default,
     border: "2px solid",
     borderColor: vars.colors.border,
-    minWidth: "200px",
+    minWidth: "0px",
     maxWidth: "200px",
+    height: "2.5rem",
     userSelect: "none",
-    padding: "0.5em",
+    cursor: "pointer",
+    transition: "width 0.5s ease-in-out",
     ":focus": {
       border: "2px solid",
       borderColor: vars.colors.primary,
@@ -19,6 +21,10 @@ export const selectBox = recipe({
       border: "2px solid",
       borderColor: vars.colors.primary,
     },
+    ":hover": {
+      border: "2px solid",
+      borderColor: vars.colors.primary,
+    }
   },
   variants: {
     display: {
@@ -42,5 +48,26 @@ export const selectBox = recipe({
         marginLeft: "auto",
       },
     },
+    width: {
+      none: {
+        minWidth: "0px",
+        width: "0"
+      },
+      default: {
+        minWidth: "200px",
+        width: "200px",
+        padding: "0 0.5em",
+      },
+    },
+    focus: {
+      default: {
+        border: "2px solid",
+        borderColor: vars.colors.border,
+      },
+      active: {
+        border: "2px solid",
+        borderColor: vars.colors.primary,
+      }
+    }
   },
 });

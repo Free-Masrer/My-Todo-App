@@ -6,17 +6,21 @@ interface TaskComponentProps {
   task: TaskProps;
 }
 
-import { containerStyles } from "@assets/styles/container.css";
+import { Alert, containerStyles } from "@assets/styles/container.css";
 import { typographyStyle } from "@assets/styles/headding.css";
 import { buttonStyles } from "@assets/styles/buttons.css";
 
 import {
+  AlertIcons,
+  AlertLabel,
   Left,
   LeftLabel,
   Right,
   checkboxDiv,
   checkboxInput
 } from "./task.css";
+
+import { GrCircleAlert } from "react-icons/gr"
 
 function Task({ task }: TaskComponentProps) {
   const { removeTask, updateCheckedStatus } = useContext(TasksContext);
@@ -33,7 +37,7 @@ function Task({ task }: TaskComponentProps) {
   const waitForAnimationAndRemove = (id: string) => {
     setTimeout(() => {
       removeTask(id);
-    }, 250);
+    }, 550);
   };
 
   function handleCheckedStatus() {
@@ -66,7 +70,13 @@ function Task({ task }: TaskComponentProps) {
           role: "lable",
           colorVars: checked ? "disabled" : "primary"
         })}>{task.content}</span>
-         {beingRemoved && <p>Task delete</p>}
+         {beingRemoved && 
+          <div className={Alert({
+            style: "error"
+          })}>
+            <GrCircleAlert className={AlertIcons} />
+            <span className={AlertLabel}>Task delete</span>
+          </div>}
       </div>
 
       <div className={Right}>

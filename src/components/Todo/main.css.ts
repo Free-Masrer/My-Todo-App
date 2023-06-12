@@ -25,9 +25,6 @@ globalStyle("#tasks-area-wrapper", {
 globalStyle("#task-writer", {
   borderRadius: vars.shape.round,
   backgroundColor: vars.colors.darkGreySidebar,
-  transition: "0.25s ease",
-  transitionProperty: "background-color box-shadow",
-  animation: "mainSlideDown 0.25s ease",
 });
 
 export const Left = style({
@@ -151,6 +148,9 @@ export const selectSelector = recipe({
     justifyContent: "space-between",
     alignItems: "center",
     display: "flex",
+    ":hover": {
+
+    },
   },
   variants: {
     display: {

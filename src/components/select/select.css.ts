@@ -19,7 +19,7 @@ export const select = recipe({
   base: {
     position: "absolute",
     zIndex: "1",
-    marginTop: "12.1rem",
+    top: "290px",
     marginLeft: "-0.7rem",
     minWidth: "225px",
     maxHeight: "400px",

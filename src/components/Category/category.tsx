@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { BsTrash } from 'react-icons/bs';
+import { CiWarning } from 'react-icons/ci'
 
 import { CategoriesContext, CategoryProps } from "@contexts/CategoriesContext";
 import { PathContext } from "@contexts/PathContext";
@@ -10,10 +11,11 @@ interface CategoryComponentProps {
   category: CategoryProps;
 }
 
-import { containerStyles } from "@assets/styles/container.css";
+import { Alert, containerStyles } from "@assets/styles/container.css";
 import { typographyStyle } from "@assets/styles/headding.css";
 import { buttonStyles } from "@assets/styles/buttons.css";
 import { taskAmountStyle } from "./category.css";
+import { AlertLabel } from "../Task/task.css";
 
 
 function Category({ category }: CategoryComponentProps) {
@@ -44,7 +46,7 @@ function Category({ category }: CategoryComponentProps) {
       removeCategory(slug);
       removeTasks(slug);
       setBeingRemoved("");
-    }, 2000);
+    }, 550);
   };
 
   const removeTasks = (slug: string) => {
@@ -80,9 +82,14 @@ function Category({ category }: CategoryComponentProps) {
           role: "lable",
         })}>{category.title}</span>
         {beingRemoved &&
-          <span>
-            Сategory deleted
-          </span>}
+          <div className={Alert({
+            style: "error",
+          })}>
+            <CiWarning />
+            <span className={AlertLabel}>
+              deleted
+            </span>
+          </div>}
       </div>
       {category.slug !== "/" && (
         <button className={buttonStyles({

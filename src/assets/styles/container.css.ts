@@ -364,3 +364,27 @@ export const footerBoxItems = recipe({
     },
   },
 });
+
+
+export const Alert = recipe ({
+  base: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "start",
+    padding: "10px 5px",
+    borderRadius: "10px",
+    color: vars.colors.textPrimary,
+    width: "120px",
+    minWidth: "120px",
+    minHeight: "20px",
+  },
+  variants: {
+    style: {
+      error: {
+        backgroundColor: vars.colors.alertError,
+      }
+    }
+  },
+  
+})

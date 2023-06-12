@@ -112,19 +112,21 @@ export const Right = style ({
 export const Date = style({
         display: "grid",
         placeItems: "center",
-  
-        height: "30px",
-  
-        padding: "0 16px",
-  
-        borderRadius: "10px",
-  
-        cursor: "pointer",
-  
+        height: "30px",  
+        padding: "0 16px", 
+        borderRadius: "10px", 
+        cursor: "pointer", 
         transition: "0.25s ease",
-  
         ":hover": {
           backgroundColor: "dark",
         }
   
+})
+
+export const AlertLabel = style ({
+  paddingLeft: "15px",
+})
+
+export const AlertIcons = style ({
+  color: vars.colors.textPrimary,
 })

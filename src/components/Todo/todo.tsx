@@ -49,17 +49,19 @@ function Todo() {
   const { path } = useContext(PathContext);
   const { tasks, addTask, changeTasksOrder } = useContext(TasksContext);
 
-  const [checked] = useState(false);
+  const [checked, setChecked] = useState(false);
   const [category, setCategory] = useState<CategoryProps>(categories[0]);
   const [isSelectingCategory, setIsSelectingCategory] = useState(false);
+  const [isInputFocused, setInputFocused] = useState(false);
 
   const formRef = useRef<HTMLFormElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  
+
   const [checkedTasksInCategory, setCheckedTasksInCategory] = useState<TaskProps[]>([]);
 
   const [isMobile] = useState(window.innerWidth <= 390);
+  const [isMb] = useState(window.innerWidth <= 768);
 
   const spanIcon = `${dropdownIconStyle} ${iconStyle}`;
 
@@ -175,6 +177,7 @@ function Todo() {
           })}
           id="task-writer"
           onClick={() => inputRef.current?.focus()}>
+
           <form
             className={newTodoForm}
             noValidate
@@ -188,40 +191,35 @@ function Todo() {
                 role: "lable",
               })}>Add your Todo here: </label>
             </div>
-            <input
-              className={formInput}
-              type="text"
-              placeholder="Add your Todo..."
-              ref={inputRef}
-            />
-          </form>
-          <div className={containerStyles({
-            display: "flex",
-            direction: "column",
-            gap: "small",
-            padding: "form"
-          })}>
             <div className={containerStyles({
               display: "flex",
-              direction: isMobile ? "column" : "row",
+              direction: isMb ? "column" : "row",
               gap: "small",
-              alignItems: "center"
+              justifyContent: "center",
+              alignItems: "center",
+
             })}>
-              <p className={typographyStyle({
-                role: "lable",
-                colorVars: "primary",
-              })}>Save to the category: </p>
+              <input
+                className={formInput}
+                type="text"
+                placeholder="Add your Todo..."
+                ref={inputRef}
+                onSubmit={handleAddTask}
+                onFocus={() => setInputFocused(true)}
+                onBlur={() => setInputFocused(false)}
+              />
               <div
                 className={selectBox({
                   display: "flex",
                   margin: "default",
-
+                  opasity: isInputFocused ? "default" : "none",
+                  width: isInputFocused ? "default" : "none",
+                  focus: checked ? "active" : "default",
                 })}
                 onClick={() => setIsSelectingCategory(!isSelectingCategory)}
               >
                 <div className={selectSelector({
                   display: "flex",
-
                 })}>
                   <span className={typographyStyle({
                     role: "lable",
@@ -236,7 +234,7 @@ function Todo() {
                 </div>
               </div>
             </div>
-          </div>
+          </form>
           <div className={containerStyles({
             display: "flex",
             direction: isMobile ? "column" : "row",
